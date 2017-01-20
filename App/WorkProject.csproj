@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{61D250F0-7FEE-43A4-8EA6-8ED61DB52F05}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WorkProject</RootNamespace>
+    <AssemblyName>WorkProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Sergio\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;_DEVELOP</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit" />
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Inflector">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net40\Inflector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Qios.DevSuite.Components">
+      <HintPath>C:\Program Files %28x86%29\QIOS\Qios.DevSuite.Components 4.0\Bin\Qios.DevSuite.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\WorkProjectSettings.cs" />
+    <Compile Include="Controls\CompanyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CompanyPanel.Designer.cs">
+      <DependentUpon>CompanyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CountItemsEventArgs.cs" />
+    <Compile Include="Controls\DataGridHelper.cs" />
+    <Compile Include="Controls\Dialogs\Base\IItemsDialog.cs" />
+    <Compile Include="Controls\Dialogs\ProductListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Dialogs\ProductListDialog.Designer.cs">
+      <DependentUpon>ProductListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SelectItemsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SelectItemsDialog.Designer.cs">
+      <DependentUpon>SelectItemsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SpecificationItemsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SpecificationItemsDialog.Designer.cs">
+      <DependentUpon>SpecificationItemsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SpecificationListDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SpecificationListDialog.Designer.cs">
+      <DependentUpon>SpecificationListDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExceptionHelper.cs" />
+    <Compile Include="Controls\GroupTreeView.cs" />
+    <Compile Include="Controls\IViewer.cs" />
+    <Compile Include="Controls\MainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MainPanel.Designer.cs">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EntityViewer.Designer.cs">
+      <DependentUpon>EntityViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SelectBox.Designer.cs">
+      <DependentUpon>SelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\EntityDetailViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\EntityDetailViewer.Designer.cs">
+      <DependentUpon>EntityDetailViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpecificationViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SpecificationViewer.Designer.cs">
+      <DependentUpon>SpecificationViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\BankEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\BankEditor.Designer.cs">
+      <DependentUpon>BankEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Base\DocumentMaterialEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Base\DocumentMaterialEditor.Designer.cs">
+      <DependentUpon>DocumentMaterialEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Base\Editor.cs" />
+    <Compile Include="Editors\Base\IEditor.cs" />
+    <Compile Include="Editors\Base\ObjectEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Base\ObjectEditor.Designer.cs">
+      <DependentUpon>ObjectEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ContractorEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ContractorEditor.Designer.cs">
+      <DependentUpon>ContractorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\EmployeeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\EmployeeEditor.Designer.cs">
+      <DependentUpon>EmployeeEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\GroupItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\GroupItemEditor.Designer.cs">
+      <DependentUpon>GroupItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\InvoiceExpenseEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\InvoiceIncomeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\MaterialEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\MaterialEditor.Designer.cs">
+      <DependentUpon>MaterialEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\MeasurementEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\MeasurementEditor.Designer.cs">
+      <DependentUpon>MeasurementEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\OkopfEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\OkopfEditor.Designer.cs">
+      <DependentUpon>OkopfEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\OkpdtrEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\OkpdtrEditor.Designer.cs">
+      <DependentUpon>OkpdtrEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\OperationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\OperationEditor.Designer.cs">
+      <DependentUpon>OperationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\PersonEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\PersonEditor.Designer.cs">
+      <DependentUpon>PersonEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ProductEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ProductEditor.Designer.cs">
+      <DependentUpon>ProductEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ProposalEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ProposalEditor.Designer.cs">
+      <DependentUpon>ProposalEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\SpecificationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\SpecificationEditor.Designer.cs">
+      <DependentUpon>SpecificationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\SupplierEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\SupplierEditor.Designer.cs">
+      <DependentUpon>SupplierEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\TaxEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\TaxEditor.Designer.cs">
+      <DependentUpon>TaxEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuMainForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuMainForm.Designer.cs">
+      <DependentUpon>MenuMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Printing\Base\ArticleStringStyleSelector.cs" />
+    <Compile Include="Printing\Base\EntityPrinting.cs" />
+    <Compile Include="Printing\Base\InlinePropertyValue.cs" />
+    <Compile Include="Printing\Base\IPrinting.cs" />
+    <Compile Include="Printing\Base\Preview.xaml.cs">
+      <DependentUpon>Preview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Printing\Base\Printer.cs" />
+    <Compile Include="Printing\ProposalPrinting.cs" />
+    <Compile Include="Printing\SpecificationPrinting.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Utils\ConvertHelper.cs" />
+    <Compile Include="Utils\NumberExtension.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
+    <Compile Include="Utils\XamlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Components\ComponentLib\ComponentLib.Controls\ComponentLib.Controls.csproj">
+      <Project>{B45ADB28-2EB3-4CFA-B240-82D8F58BEB22}</Project>
+      <Name>ComponentLib.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\WorkProject.Data.csproj">
+      <Project>{1E32C07F-A997-4ECA-B35C-391DBEC36211}</Project>
+      <Name>WorkProject.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\CompanyPanel.resx">
+      <DependentUpon>CompanyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Dialogs\ProductListDialog.resx">
+      <DependentUpon>ProductListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Dialogs\SelectItemsDialog.resx">
+      <DependentUpon>SelectItemsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Dialogs\SpecificationItemsDialog.resx">
+      <DependentUpon>SpecificationItemsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Dialogs\SpecificationListDialog.resx">
+      <DependentUpon>SpecificationListDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MainPanel.resx">
+      <DependentUpon>MainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\EntityViewer.resx">
+      <DependentUpon>EntityViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SelectBox.resx">
+      <DependentUpon>SelectBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\BankEditor.resx">
+      <DependentUpon>BankEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Base\DocumentMaterialEditor.resx">
+      <DependentUpon>DocumentMaterialEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Base\ObjectEditor.resx">
+      <DependentUpon>ObjectEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ContractorEditor.resx">
+      <DependentUpon>ContractorEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\EmployeeEditor.resx">
+      <DependentUpon>EmployeeEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\GroupItemEditor.resx">
+      <DependentUpon>GroupItemEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\MaterialEditor.resx">
+      <DependentUpon>MaterialEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\MeasurementEditor.resx">
+      <DependentUpon>MeasurementEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\OkopfEditor.resx">
+      <DependentUpon>OkopfEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\OkpdtrEditor.resx">
+      <DependentUpon>OkpdtrEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\OperationEditor.resx">
+      <DependentUpon>OperationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\PersonEditor.resx">
+      <DependentUpon>PersonEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ProductEditor.resx">
+      <DependentUpon>ProductEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\SpecificationEditor.resx">
+      <DependentUpon>SpecificationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\SupplierEditor.resx">
+      <DependentUpon>SupplierEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\TaxEditor.resx">
+      <DependentUpon>TaxEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Printing\Base\Preview.xaml" />
+    <None Include="packages.config" />
+    <None Include="Printing\PreviewCalculation.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Printing\PreviewProposal.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

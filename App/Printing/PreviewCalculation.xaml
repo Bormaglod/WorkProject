@@ -1,0 +1,60 @@
+﻿<FlowDocument
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WorkProject.Printing;assembly=WorkProject"
+    ColumnWidth="400" FontSize="14" FontFamily="Tahoma">
+    <FlowDocument.Resources>
+        <Style x:Key="DefaultStringStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+        <Style x:Key="DetailStringStyle" BasedOn="{StaticResource DefaultStringStyle}" TargetType="{x:Type ListViewItem}">
+            <Setter Property="FontStyle" Value="Italic" />
+            <Setter Property="FontSize" Value="10" />
+        </Style>
+        <Style x:Key="SummaryStringStyle" BasedOn="{StaticResource DefaultStringStyle}" TargetType="{x:Type ListViewItem}">
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </FlowDocument.Resources>
+    <Section
+        TextAlignment="Center">
+        <Paragraph><Bold>Калькуляция</Bold></Paragraph>
+    </Section>
+    <Section xml:space="preserve">
+        <Paragraph><Run>Изделие: </Run><Run Text="{Binding Path=Name, Mode=OneTime}"></Run></Paragraph>
+        <Paragraph><Run>Спецификация: </Run><Run Text="{Binding Path=Specification, Mode=OneTime}"></Run></Paragraph>
+        <Paragraph><Run>Дата: </Run><Run Text="{Binding Path=DateApproval, Mode=OneTime}"></Run></Paragraph>
+    </Section>
+    <BlockUIContainer>
+        <ListView x:Name="listArticles">
+            <ListView.ItemContainerStyleSelector>
+                <local:ArticleStringStyleSelector
+                    DefaultStyle="{StaticResource DefaultStringStyle}"
+                    DetailStyle="{StaticResource DetailStringStyle}"
+                    SummaryStyle="{StaticResource SummaryStringStyle}"
+                    Property="ArticleStyle" />
+            </ListView.ItemContainerStyleSelector>
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Код" DisplayMemberBinding="{Binding Path=Code}" Width="70"/>
+                        <GridViewColumn Header="Наименование статьи" DisplayMemberBinding="{Binding Path=Name}" Width="400"/>
+                        <GridViewColumn Header="Количество" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Right" Text="{Binding Path=Count}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Сумма" Width="100">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Right" Text="{Binding Path=Summa}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </BlockUIContainer>
+</FlowDocument>

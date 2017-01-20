@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{1E32C07F-A997-4ECA-B35C-391DBEC36211}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WorkProject.Data</RootNamespace>
+    <AssemblyName>WorkProject.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <TargetFrameworkProfile />
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Inflector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net45\Inflector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.1.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\Entity.cs" />
+    <Compile Include="Base\EntityGroup.cs" />
+    <Compile Include="Base\EntityName.cs" />
+    <Compile Include="Base\IResource.cs" />
+    <Compile Include="Base\IDocumentStatus.cs" />
+    <Compile Include="Base\ItemDocumentComparer.cs" />
+    <Compile Include="Base\ITreeItem.cs" />
+    <Compile Include="Configuration\WorkProjectSettings.cs" />
+    <Compile Include="DataHelper.cs" />
+    <Compile Include="Entities\Article.cs" />
+    <Compile Include="Entities\Bank.cs" />
+    <Compile Include="Entities\ColumnItem.cs" />
+    <Compile Include="Entities\Contractor.cs" />
+    <Compile Include="Entities\DocumentCommon.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\GroupItem.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\InvoiceContractor.cs" />
+    <Compile Include="Entities\InvoiceExpense.cs" />
+    <Compile Include="Entities\InvoiceIncome.cs" />
+    <Compile Include="Entities\InvoiceWriteOff.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\ItemDocument.cs" />
+    <Compile Include="Entities\ItemInvoiceExpense.cs" />
+    <Compile Include="Entities\ItemInvoiceIncome.cs" />
+    <Compile Include="Entities\ItemMaterial.cs" />
+    <Compile Include="Entities\ItemOperation.cs" />
+    <Compile Include="Entities\ItemProduct.cs" />
+    <Compile Include="Entities\ItemProposal.cs" />
+    <Compile Include="Entities\ItemSpecification.cs" />
+    <Compile Include="Entities\ItemTax.cs" />
+    <Compile Include="Entities\Material.cs" />
+    <Compile Include="Entities\MaterialDetail.cs" />
+    <Compile Include="Entities\Measurement.cs" />
+    <Compile Include="Entities\Numerator.cs" />
+    <Compile Include="Entities\Okopf.cs" />
+    <Compile Include="Entities\Okpdtr.cs" />
+    <Compile Include="Entities\Operation.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\Proposal.cs" />
+    <Compile Include="Entities\Specification.cs" />
+    <Compile Include="Entities\Supplier.cs" />
+    <Compile Include="Entities\TableProperty.cs" />
+    <Compile Include="Entities\Tax.cs" />
+    <Compile Include="EnumMapper.cs" />
+    <Compile Include="Infrastructure\IReadOnlyReposytory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Mappings\Convetions\ColumnNameConvention.cs" />
+    <Compile Include="Mappings\Convetions\JoinTableConvention.cs" />
+    <Compile Include="Mappings\Convetions\PrimaryKeyConvention.cs" />
+    <Compile Include="Mappings\Convetions\ReferenceConvention.cs" />
+    <Compile Include="Mappings\Convetions\TableNameConvention.cs" />
+    <Compile Include="Mappings\EmployeeMap.cs" />
+    <Compile Include="Mappings\ImageMap.cs" />
+    <Compile Include="Mappings\InvoiceExpenseMap.cs" />
+    <Compile Include="Mappings\InvoiceIncomeMap.cs" />
+    <Compile Include="Mappings\ItemInvoiceExpenseMap.cs" />
+    <Compile Include="Mappings\ItemInvoiceIncomeMap.cs" />
+    <Compile Include="Mappings\ItemProductMap.cs" />
+    <Compile Include="Mappings\ItemProposalMap.cs" />
+    <Compile Include="Mappings\ItemMaterialMap.cs" />
+    <Compile Include="Mappings\ItemOperationMap.cs" />
+    <Compile Include="Mappings\ItemTaxMap.cs" />
+    <Compile Include="Mappings\MaterialDetailMap.cs" />
+    <Compile Include="Mappings\MaterialMap.cs" />
+    <Compile Include="Mappings\ModelGenerator.cs" />
+    <Compile Include="Mappings\OkpdtrMap.cs" />
+    <Compile Include="Mappings\ProductMap.cs" />
+    <Compile Include="Mappings\ProposalMap.cs" />
+    <Compile Include="Mappings\SpecificationMap.cs" />
+    <Compile Include="Mappings\SupplierMap.cs" />
+    <Compile Include="Mappings\TablePropertyMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GroupItemRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RepositoryList.cs" />
+    <Compile Include="SqlStatementInterceptor.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Utils\ImageFile.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
