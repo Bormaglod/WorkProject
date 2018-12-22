@@ -55,7 +55,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit" />
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=4.60.547.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Components\Krypton-NET-4.6\Bin\Versions\4.6\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -78,8 +81,8 @@
     <Reference Include="PresentationFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="Qios.DevSuite.Components">
-      <HintPath>C:\Program Files %28x86%29\QIOS\Qios.DevSuite.Components 4.0\Bin\Qios.DevSuite.Components.dll</HintPath>
+    <Reference Include="Qios.DevSuite.Components, Version=4.0.0.20, Culture=neutral, PublicKeyToken=3cc53827b79c92fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\Qios.DevSuite.Components.1.0.0\lib\Qios.DevSuite.Components.dll</HintPath>
     </Reference>
     <Reference Include="ReachFramework">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
@@ -330,7 +333,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Components\ComponentLib\ComponentLib.Controls\ComponentLib.Controls.csproj">
+    <ProjectReference Include="..\..\Components\ComponentLib\ComponentLib.Controls\ComponentLib.Controls.csproj">
       <Project>{B45ADB28-2EB3-4CFA-B240-82D8F58BEB22}</Project>
       <Name>ComponentLib.Controls</Name>
     </ProjectReference>
